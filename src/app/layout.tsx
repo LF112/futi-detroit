@@ -3,6 +3,7 @@ import React from 'react';
 import 'normalize.css';
 import '@/styles/index.scss';
 
+import { CommitPage } from '@/app/components/devtools/commit';
 import { LagRadar } from '@/app/components/devtools/lag-radar/dev';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
 import { interFont } from '@/styles/font';
@@ -18,6 +19,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <CommitPage />
+      </head>
       <body className={cn('futi-ui', interFont.variable)}>
         <ScrollArea className="relative flex h-dvh w-dvw min-w-max">
           <TRPCReactProvider>{children}</TRPCReactProvider>
