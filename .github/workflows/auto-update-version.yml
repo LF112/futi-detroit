@@ -41,7 +41,10 @@ jobs:
           NEW_VER="$major.$minor.$build"
 
           npm --no-git-tag-version version $NEW_VER
-          echo "::set-output name=package_version::$NEW_VER"
+          # We don't need a .lock file other than bun.lockb.
+          rm -rf package-lock.json yarn.lock pnpm-lock.yaml
+          
+          echo "package_version=$NEW_VER" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
