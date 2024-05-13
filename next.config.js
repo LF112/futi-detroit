@@ -45,7 +45,7 @@ function useLocalGitRepo() {
 
     return { hash: commitHash, url: `${remoteUrl}/commit/${commitHash}` };
   } catch (_error) {
-    console.error('Failed to fetch repo info');
+    console.error('Failed to fetch repo info:', _error);
     return null;
   }
 }
