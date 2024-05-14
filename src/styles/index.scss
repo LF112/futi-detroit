@@ -15,7 +15,8 @@
 }
 
 body {
-  @apply overflow-clip bg-[#eff4f9] dark:bg-[#22252b];
+  background-blend-mode: overlay, normal;
+  @apply overflow-clip bg-[#eff4f9] dark:bg-darkBackground;
 }
 
 .text-adjust {

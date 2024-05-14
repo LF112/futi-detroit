@@ -1,14 +1,12 @@
 'use client';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
-import { className } from 'postcss-selector-parser';
-
 import { vertex_shader } from '@/app/components/ui/frag-shader/consts';
 import { compileShader } from '@/app/components/ui/frag-shader/utils';
 import { cn } from '@/utils';
 
 type UniformValue = number | number[] | number[][] | Float32Array;
-type Uniforms = Record<
+export type Uniforms = Record<
   string,
   {
     type: string;
@@ -24,7 +22,13 @@ interface IFragShaderProps {
   uniforms?: Uniforms;
   maxFPS?: number;
 }
-export const FragShader: React.FC<IFragShaderProps> = ({ source = '', center = ['x', 'y'], uniforms, maxFPS = 60 }) => {
+export const FragShader: React.FC<IFragShaderProps> = ({
+  source = '',
+  center = ['x', 'y'],
+  uniforms,
+  maxFPS = 60,
+  className,
+}) => {
   const webglRef = useRef<HTMLCanvasElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>();
 

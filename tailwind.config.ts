@@ -11,6 +11,10 @@ export default {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
       },
+      backgroundImage: {
+        darkBackground:
+          'radial-gradient(23rem 23rem at 70% 30%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)), linear-gradient(rgb(34, 37, 43) 20rem, rgb(21, 22, 26) 62rem)',
+      },
       colors: {
         futi: 'rgb(62 141 224 / <alpha-value>)',
 
