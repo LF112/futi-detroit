@@ -20,6 +20,7 @@
     "@trpc/server": "next",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.1.9",
     "next": "^14.2.1",
     "normalize.css": "^8.0.1",
     "react": "18.2.0",
@@ -55,5 +56,5 @@
   "ct3aMetadata": {
     "initVersion": "7.32.0"
   },
-  "packageManager": "npm@9.8.0"
+  "packageManager": "pnpm@9.1.1"
 }
