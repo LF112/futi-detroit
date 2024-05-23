@@ -23,8 +23,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CommitPage />
       </head>
       <body className={cn('futi-ui', interFont.variable)}>
-        <ScrollArea className="relative flex h-dvh w-dvw min-w-max">
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+        <ScrollArea className="relative h-dvh w-dvw min-w-max">
+          <main className="flex">
+            <TRPCReactProvider>{children}</TRPCReactProvider>
+          </main>
         </ScrollArea>
         <LagRadar />
       </body>
