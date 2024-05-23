@@ -10,12 +10,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background font-sans text-foreground;
   }
 }
 
 body {
-  @apply overflow-clip bg-[#eff4f9] dark:bg-[#22252b];
+  background-blend-mode: overlay, normal;
+  @apply overflow-clip bg-[#eff4f9] dark:bg-darkBackground;
 }
 
 .text-adjust {

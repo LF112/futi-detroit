@@ -1,0 +1,33 @@
+name: Format Code
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  format-code:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Lint
+        run: |
+          bun i
+          bun run lint:fix
+
+      - uses: stefanzweifel/git-auto-commit-action@v5

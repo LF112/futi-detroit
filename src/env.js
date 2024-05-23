@@ -1,5 +1,5 @@
-import { createEnv } from '@t3-oss/env-nextjs';
-import { z } from 'zod';
+import { createEnv } from '@t3-oss/env-nextjs'
+import { z } from 'zod'
 
 export const env = createEnv({
   /**
@@ -23,13 +23,13 @@ export const env = createEnv({
 
   /**
    * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
-   * middlewares) or client-side so we need to destruct manually.
+   * middlewares) or client-side, so we need to destruct manually.
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
 
-    NEXT_PUBLIC_COMMIT_HASH: (process.env.NEXT_PUBLIC_COMMIT_HASH || '').slice(0, 8),
+    NEXT_PUBLIC_COMMIT_HASH: (process.env.NEXT_PUBLIC_COMMIT_HASH ?? '').slice(0, 8),
     NEXT_PUBLIC_COMMIT_URL: process.env.NEXT_PUBLIC_COMMIT_URL,
   },
   /**
@@ -42,4 +42,4 @@ export const env = createEnv({
    * `SOME_VAR=''` will throw an error.
    */
   emptyStringAsUndefined: true,
-});
+})

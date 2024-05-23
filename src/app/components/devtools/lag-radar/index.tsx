@@ -1,37 +1,37 @@
-'use client';
+'use client'
 
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import * as HoverCard from '@radix-ui/react-hover-card'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
-import * as HoverCard from '@radix-ui/react-hover-card';
-
-import { type ILagRadarConfig, lagRadar } from '@/app/components/devtools/lag-radar/utils';
-import { cn } from '@/utils';
+import type { ILagRadarConfig } from '@/app/components/devtools/lag-radar/utils'
+import { lagRadar } from '@/app/components/devtools/lag-radar/utils'
+import { cn } from '@/utils'
 
 export interface ILagRadarProps
   extends React.ComponentPropsWithoutRef<typeof HoverCard.Root>,
-    Omit<ILagRadarConfig, 'parent'> {}
+  Omit<ILagRadarConfig, 'parent'> {}
 
 export const LagRadar: React.FC<ILagRadarProps> = ({ frames, speed, size, inset, ...props }) => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false)
 
-  const initialRef = useRef(false);
+  const initialRef = useRef(false)
   const nodeRef = useCallback((node: HTMLDivElement) => {
     if (node && !initialRef.current) {
-      initialRef.current = true;
-      const { width, height } = node.getBoundingClientRect();
+      initialRef.current = true
+      const { width, height } = node.getBoundingClientRect()
       lagRadar({
         frames,
         speed,
         size: size ?? Math.min(width, height) - 16,
         inset,
         parent: node,
-      });
+      })
     }
-  }, []);
-  useEffect(() => void (!visible && setTimeout(() => (initialRef.current = false), 16)), [visible]);
+  }, [])
+  useEffect(() => void (!visible && setTimeout(() => (initialRef.current = false), 16)), [visible])
 
   return (
-    <HoverCard.Root open={visible} onOpenChange={(val) => val && setVisible(true)} {...props}>
+    <HoverCard.Root open={visible} onOpenChange={val => val && setVisible(true)} {...props}>
       <HoverCard.Trigger asChild>
         <div
           className={cn(
@@ -49,7 +49,7 @@ export const LagRadar: React.FC<ILagRadarProps> = ({ frames, speed, size, inset,
         />
       </HoverCard.Portal>
     </HoverCard.Root>
-  );
-};
+  )
+}
 
-export default LagRadar;
+export default LagRadar
