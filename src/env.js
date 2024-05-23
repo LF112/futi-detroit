@@ -29,7 +29,7 @@ export const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
 
-    NEXT_PUBLIC_COMMIT_HASH: (process.env.NEXT_PUBLIC_COMMIT_HASH || '').slice(0, 8),
+    NEXT_PUBLIC_COMMIT_HASH: (process.env.NEXT_PUBLIC_COMMIT_HASH ?? '').slice(0, 8),
     NEXT_PUBLIC_COMMIT_URL: process.env.NEXT_PUBLIC_COMMIT_URL,
   },
   /**

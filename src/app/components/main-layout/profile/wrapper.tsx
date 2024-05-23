@@ -10,7 +10,6 @@ import { fuit_uniforms, random_fade_in_shader } from '@/app/components/ui/frag-s
 type IProfileWrapperProps = React.ComponentPropsWithoutRef<'div'>;
 
 export const ProfileWrapper: React.FC<IProfileWrapperProps> = () => {
-  const [isWrapperOpen, setIsWrapperOpen] = useState(false);
   const [isBackgroundVisible, setIsBackgroundVisible] = useState(false);
 
   return (
