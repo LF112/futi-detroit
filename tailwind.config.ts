@@ -1,7 +1,7 @@
-import { type Config } from 'tailwindcss';
-import { fontFamily } from 'tailwindcss/defaultTheme';
-import tailwindcss_animate from 'tailwindcss-animate';
-import createPlugin from 'windy-radix-palette';
+import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
+import tailwindcss_animate from 'tailwindcss-animate'
+import createPlugin from 'windy-radix-palette'
 
 export default {
   content: ['./src/**/*.tsx'],
@@ -94,4 +94,4 @@ export default {
       },
     },
   },
-} satisfies Config;
+} satisfies Config

@@ -1,16 +1,15 @@
-'use client';
-import React, { useState } from 'react';
+'use client'
+import { AnimatePresence, motion } from 'framer-motion'
+import React, { useState } from 'react'
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { FutiClipPath } from '@/app/assets/svg/futi'
+import { FragShader } from '@/app/components/ui/frag-shader'
+import { fuit_uniforms, random_fade_in_shader } from '@/app/components/ui/frag-shader/consts'
 
-import { FutiClipPath } from '@/app/assets/svg/futi';
-import { FragShader } from '@/app/components/ui/frag-shader';
-import { fuit_uniforms, random_fade_in_shader } from '@/app/components/ui/frag-shader/consts';
-
-type IProfileWrapperProps = React.ComponentPropsWithoutRef<'div'>;
+type IProfileWrapperProps = React.ComponentPropsWithoutRef<'div'>
 
 export const ProfileWrapper: React.FC<IProfileWrapperProps> = () => {
-  const [isBackgroundVisible, setIsBackgroundVisible] = useState(false);
+  const [isBackgroundVisible, setIsBackgroundVisible] = useState(false)
 
   return (
     <div className="relative p-0.5">
@@ -44,5 +43,5 @@ export const ProfileWrapper: React.FC<IProfileWrapperProps> = () => {
         </AnimatePresence>
       </motion.div>
     </div>
-  );
-};
+  )
+}
