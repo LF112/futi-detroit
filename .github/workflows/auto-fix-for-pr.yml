@@ -26,7 +26,8 @@ jobs:
           bun-version: latest
 
       - name: Lint
-        run: bun run lint:fix
+        run: |
+          bun i
+          bun run lint:fix
 
-      # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
