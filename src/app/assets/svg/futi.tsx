@@ -9,14 +9,7 @@ const FutiPath: React.FC<React.ComponentPropsWithoutRef<'path'>> = props => (
 
 type IFutiIconProps = React.ComponentPropsWithoutRef<'svg'>
 export const FutiIcon: React.FC<IFutiIconProps> = props => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="300"
-    height="128.094"
-    fill="none"
-    viewBox="0 0 300 128.094"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="300" height="128.094" fill="none" viewBox="0 0 300 128.094" {...props}>
     <FutiPath fill="#fff" />
   </svg>
 )
