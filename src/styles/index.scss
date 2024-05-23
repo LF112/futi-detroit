@@ -28,46 +28,6 @@ body {
   @apply text-adjust leading-none;
 }
 
-.line-height-smooth {
-  animation-name: line-height-smooth-entry;
-  animation-duration: 1.08s;
-  animation-timing-function: cubic-bezier(0.645,0.045,0.355,1);
-  animation-fill-mode: forwards;
-  animation-delay: .25s;
-}
-
-.line-width-smooth {
-  animation-name: line-width-smooth-entry;
-  animation-duration: 1.08s;
-  animation-timing-function: cubic-bezier(0.645,0.045,0.355,1);
-  animation-fill-mode: forwards;
-  animation-delay: .25s;
-}
-
-@keyframes line-height-smooth-entry {
-  from{
-    opacity: 1;
-  }
-  to {
-    @media (prefers-color-scheme: dark) {
-      opacity: 0.3;
-    }
-    height: 150%;
-  }
-}
-
-@keyframes line-width-smooth-entry {
-  from{
-    opacity: 1;
-  }
-  to {
-    @media (prefers-color-scheme: dark) {
-      opacity: 0.3;
-    }
-    width: 130%;
-  }
-}
-
 ::selection {
   background-color: theme('colors.futi/0.15');
   @media (prefers-color-scheme: dark) {

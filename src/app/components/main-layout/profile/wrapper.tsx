@@ -14,10 +14,10 @@ export const ProfileWrapper: React.FC<IProfileWrapperProps> = () => {
 
   return (
     <div className="relative p-0.5">
-      <div className="line-width-smooth absolute inset-x-0 -top-px left-1/2 h-px w-0 -translate-x-1/2 bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
-      <div className="line-width-smooth absolute inset-x-0 -bottom-px left-1/2 h-px w-0 -translate-x-1/2 bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
-      <div className="line-height-smooth absolute inset-y-0 -right-px top-1/2 h-0 w-px -translate-y-1/2 bg-gradient-to-b from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
-      <div className="line-height-smooth absolute inset-y-0 -left-px top-1/2 h-0 w-px -translate-y-1/2 bg-gradient-to-b from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
+      <div className="absolute inset-x-0 -top-px left-1/2 h-px w-0 -translate-x-1/2 animate-line-width-smooth bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
+      <div className="absolute inset-x-0 -bottom-px left-1/2 h-px w-0 -translate-x-1/2 animate-line-width-smooth bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
+      <div className="absolute inset-y-0 -right-px top-1/2 h-0 w-px -translate-y-1/2 animate-line-height-smooth bg-gradient-to-b from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
+      <div className="absolute inset-y-0 -left-px top-1/2 h-0 w-px -translate-y-1/2 animate-line-height-smooth bg-gradient-to-b from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
       <motion.div className="overflow-hidden">
         <AnimatePresence>
           {isBackgroundVisible && (

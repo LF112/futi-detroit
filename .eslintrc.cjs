@@ -48,7 +48,6 @@ const config = {
     '@typescript-eslint/ban-types': 0,
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 'off',
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'simple-import-sort/imports': [
       'error',
       {

@@ -66,10 +66,24 @@ export default {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'line-height-smooth-entry': {
+          '0%': { opacity: '1' },
+          '100%': {
+            height: '150%',
+          },
+        },
+        'line-width-smooth-entry': {
+          '0%': { opacity: '1' },
+          '100%': {
+            width: '130%',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'line-height-smooth': 'line-height-smooth-entry 1.08s cubic-bezier(0.645,0.045,0.355,1) forwards 0.25s',
+        'line-width-smooth': 'line-width-smooth-entry 1.08s cubic-bezier(0.645,0.045,0.355,1) forwards 0.25s',
       },
     },
     container: {
