@@ -19,8 +19,6 @@ export const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_NODE_ENV: z.enum(['development', 'test', 'production']),
-    NEXT_PUBLIC_COMMIT_HASH: z.string().optional(),
-    NEXT_PUBLIC_COMMIT_URL: z.string().optional(),
   },
 
   /**
@@ -30,9 +28,6 @@ export const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
-
-    NEXT_PUBLIC_COMMIT_HASH: (process.env.NEXT_PUBLIC_COMMIT_HASH ?? '').slice(0, 8),
-    NEXT_PUBLIC_COMMIT_URL: process.env.NEXT_PUBLIC_COMMIT_URL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
