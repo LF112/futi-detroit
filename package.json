@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "dev": "next dev -p 2048",
+    "dev": "next dev -p 2048 --turbo",
     "start": "next start",
     "lint": "prettier --list-different . && eslint",
     "lint:fix": "prettier --list-different --write . && eslint --fix",
@@ -39,16 +39,30 @@
     "zod": "^3.23.3"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.8.0",
     "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.20",
     "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
     "child_process": "^1.0.2",
     "eslint": "^9.3.0",
-    "eslint-config-hyoban": "^2.7.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unicorn": "^55.0.0",
+    "eslint-plugin-unused-imports": "^4.0.1",
+    "globals": "^15.9.0",
     "lint-staged": "^15.2.4",
     "postcss": "^8.4.34",
-    "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "sass": "^1.76.0",
     "simple-git-hooks": "^2.11.1",
@@ -60,5 +74,5 @@
   "ct3aMetadata": {
     "initVersion": "7.32.0"
   },
-  "packageManager": "pnpm@9.1.1"
+  "packageManager": "pnpm@8.15.8+sha512.d1a029e1a447ad90bc96cd58b0fad486d2993d531856396f7babf2d83eb1823bb83c5a3d0fc18f675b2d10321d49eb161fece36fe8134aa5823ecd215feed392"
 }
