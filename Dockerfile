@@ -4,7 +4,7 @@ WORKDIR /app
 FROM base AS deps
 COPY package.json bun.lockb ./
 
-RUN bun install --frozen-lockfile --production
+RUN bun install --frozen-lockfile
 RUN bun add -g --arch=x64 --platform=linux sharp
 
 FROM node:18 as build
