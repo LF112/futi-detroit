@@ -8,11 +8,7 @@
     "dev": "next dev -p 2048 --turbo",
     "start": "next start",
     "lint": "prettier --list-different . && eslint",
-    "lint:fix": "prettier --list-different --write . && eslint --fix",
-    "prepare": "simple-git-hooks"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "lint:fix": "prettier --list-different --write . && eslint --fix"
   },
   "lint-staged": {
     "*": "eslint --fix --no-warn-ignored"
@@ -65,7 +61,6 @@
     "postcss": "^8.4.34",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "sass": "^1.76.0",
-    "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.4.2",
