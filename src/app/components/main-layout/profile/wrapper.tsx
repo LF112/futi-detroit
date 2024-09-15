@@ -1,48 +1,15 @@
 'use client';
-import React, { useState } from 'react';
-
-import { AnimatePresence, motion } from 'framer-motion';
-
-import { FutiClipPath } from '@/app/assets/svg/futi';
-import { FragShader } from '@/app/components/ui/frag-shader';
-import { futi_uniforms, random_fade_in_shader } from '@/app/components/ui/frag-shader/consts';
+import React from 'react';
 
 type IProfileWrapperProps = React.ComponentPropsWithoutRef<'div'>;
 
-export const ProfileWrapper: React.FC<IProfileWrapperProps> = () => {
-  const [isBackgroundVisible, setIsBackgroundVisible] = useState(false);
-
-  return (
-    <div className="relative p-0.5">
-      <div className="absolute inset-x-0 -top-px left-1/2 h-px w-0 -translate-x-1/2 animate-line-width-smooth bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
-      <div className="absolute inset-x-0 -bottom-px left-1/2 h-px w-0 -translate-x-1/2 animate-line-width-smooth bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
-      <div className="-rigZht-px absolute inset-y-0 top-1/2 h-0 w-px -translate-y-1/2 animate-line-height-smooth bg-gradient-to-b from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
-      <div className="absolute inset-y-0 -left-px top-1/2 h-0 w-px -translate-y-1/2 animate-line-height-smooth bg-gradient-to-b from-transparent via-gray-400 to-transparent dark:via-border dark:opacity-40" />
-      <motion.div className="overflow-hidden">
-        <AnimatePresence>
-          {isBackgroundVisible && (
-            <motion.div key="futi-frame" initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.2 } }}>
-              <div className="absolute -left-px -top-px z-10 h-3.5 w-3.5 rotate-0 border-l border-t border-gray-500 dark:border-gray-100" />
-              <div className="absolute -right-px -top-px z-10 h-3.5 w-3.5 rotate-90 border-l border-t border-gray-500 dark:border-gray-100" />
-              <div className="absolute -bottom-px -left-px z-10 h-3.5 w-3.5 -rotate-90 border-l border-t border-gray-500 dark:border-gray-100" />
-              <div className="absolute -bottom-px -right-px z-10 h-3.5 w-3.5 rotate-180 border-l border-t border-gray-500 dark:border-gray-100" />
-            </motion.div>
-          )}
-          <motion.div
-            key="futi-background"
-            className="relative flex h-[25rem] w-[43.75rem] items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.8, delay: 0.2 } }}
-            onAnimationStart={() => setTimeout(() => setIsBackgroundVisible(true), 400)}
-          >
-            <div className="absolute -mb-2 -mr-6 h-32 w-80" style={{ clipPath: 'url(#futi-icon-clip)' }}>
-              {isBackgroundVisible && <FragShader source={random_fade_in_shader} uniforms={futi_uniforms} />}
-            </div>
-            <FragShader className="opacity-30 dark:opacity-20" uniforms={futi_uniforms} />
-            <FutiClipPath />
-          </motion.div>
-        </AnimatePresence>
-      </motion.div>
+export const ProfileWrapper: React.FC<IProfileWrapperProps> = ({ children }) => (
+  <div className="relative">
+    {children}
+    <div className="absolute top-0 flex size-full justify-between before:absolute before:left-0 before:top-0 before:z-10 before:size-12 before:rounded before:border-l-4 before:border-t-4 before:border-[#0295e5]/85 after:absolute after:right-0 after:top-0 after:z-10 after:size-12 after:rounded after:border-r-4 after:border-t-4 after:border-[#0295e5]/85">
+      <div className="z-0 my-4 h-[calc(100%-2rem)] w-[3.5px] bg-[#6e6e6e]/55" />
+      <div className="z-0 my-4 h-[calc(100%-2rem)] w-[3.5px] bg-[#6e6e6e]/55" />
+      <div className="absolute bottom-12 w-full before:absolute before:left-0 before:top-0 before:z-10 before:size-12 before:rounded before:border-b-4 before:border-l-4 before:border-[#0295e5]/85 after:absolute after:right-0 after:top-0 after:z-10 after:size-12 after:rounded after:border-b-4 after:border-r-4 after:border-[#0295e5]/85" />
     </div>
-  );
-};
+  </div>
+);
