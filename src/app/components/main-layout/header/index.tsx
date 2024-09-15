@@ -7,7 +7,7 @@ import { FUTIDynamicText } from '@/app/components/ui/dynamic-text';
 type IHeaderProps = React.ComponentPropsWithoutRef<'header'>;
 
 export const Header: React.FC<IHeaderProps> = memo(() => (
-  <header className="relative flex h-20 items-center">
+  <header className="relative flex h-20 items-center pt-1">
     <HeaderRibbon />
     <FUTIDynamicText
       text="Copy and paste constant defaulting"
