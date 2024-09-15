@@ -28,6 +28,10 @@ body {
   @apply text-adjust leading-none;
 }
 
+.futi-text-lyrics {
+  text-shadow: rgba(6, 7, 25, 0.32) 0.05em 0.05em 0;
+}
+
 ::selection {
   background-color: theme('colors.futi/0.15');
   @media (prefers-color-scheme: dark) {

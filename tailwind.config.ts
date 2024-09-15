@@ -10,6 +10,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
+        geometos: ['var(--font-geometos)'],
       },
       backgroundImage: {
         darkBackground:
