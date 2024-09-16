@@ -10,7 +10,7 @@ import { Footer } from '@/app/components/main-layout/footer';
 import { Header } from '@/app/components/main-layout/header';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
 import { TooltipProvider } from '@/app/components/ui/tooltip';
-import { GeometosFont, interFont, russoOneFont } from '@/styles/font';
+import { GeometosFont, interFont, kanitFont, MonaspaceNeonFont, russoOneFont, UbuntuFont } from '@/styles/font';
 import { TRPCReactProvider } from '@/trpc/react';
 import { cn } from '@/utils';
 
@@ -26,7 +26,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <CommitPage />
       </head>
-      <body className={cn('futi-ui', interFont.variable, GeometosFont.variable, russoOneFont.variable)}>
+      <body
+        className={cn(
+          'futi-ui',
+          interFont.variable,
+          GeometosFont.variable,
+          russoOneFont.variable,
+          kanitFont.variable,
+          UbuntuFont.variable,
+          MonaspaceNeonFont.variable,
+        )}
+      >
         <TooltipProvider delayDuration={100}>
           <ScrollArea className="relative h-dvh w-dvw min-w-max [&>[data-radix-scroll-area-viewport]>div]:!flex [&>[data-radix-scroll-area-viewport]>div]:h-full [&>[data-radix-scroll-area-viewport]>div]:flex-col">
             <Header />

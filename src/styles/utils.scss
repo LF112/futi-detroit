@@ -14,3 +14,7 @@
 .futi-center {
   @apply flex items-center justify-center;
 }
+
+.futi-cursor::after {
+  @apply h-full w-[1.67px] content-[''] bg-[#528bff] border-[#528bff] block animate-cursor-line
+}

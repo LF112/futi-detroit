@@ -2,7 +2,7 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
 
 import { useMemoizedFn } from 'ahooks';
-import { motion, MotionProps } from 'framer-motion';
+import { DOMMotionComponents, motion, MotionProps } from 'framer-motion';
 import { isEmpty } from 'underscore';
 
 import {
@@ -17,9 +17,10 @@ import {
   SYLLABLES_AND_LOANWORDS,
   wait,
 } from '@/app/components/ui/dynamic-text/utils';
+import { AsComp, BasicsProps } from '@/app/components/ui/types';
 import { cn } from '@/utils';
 
-type IFUTIDynamicTextProps = Pick<React.ComponentPropsWithoutRef<'h1'>, 'children' | 'className' | 'style'> &
+type IFUTIDynamicTextProps = BasicsProps<'h1', 'children'> &
   Omit<MotionProps, 'onAnimationComplete'> & {
     text?: string;
     insertPlaceholderDuration?: number; // 插入占位符持续时间（毫秒）
@@ -27,7 +28,10 @@ type IFUTIDynamicTextProps = Pick<React.ComponentPropsWithoutRef<'h1'>, 'childre
     shuffleCount?: number; // 洗牌次数
     pauseBeforeReveal?: number; // 显示真实字符前的暂停时间（毫秒）
 
-    onAnimationComplete?: () => void;
+    onAnimationComplete?: () => void; // 动画完成回调
+    onPlaceholderComplete?: () => void; // 插入占位符完成回调
+
+    as?: AsComp;
   };
 
 export const FUTIDynamicText: React.FC<IFUTIDynamicTextProps> = memo(
@@ -41,8 +45,12 @@ export const FUTIDynamicText: React.FC<IFUTIDynamicTextProps> = memo(
     shuffleCount = 14,
     pauseBeforeReveal = 50,
     onAnimationComplete,
+    onPlaceholderComplete,
+    as: Element = motion.h1,
     ...rest
   }) => {
+    Element = Element as DOMMotionComponents['h1'];
+
     const [visibleText, setVisibleText] = useState('');
 
     const prevTextRef = useRef<string | null>(null);
@@ -68,6 +76,9 @@ export const FUTIDynamicText: React.FC<IFUTIDynamicTextProps> = memo(
       }
 
       await wait(pauseBeforeReveal);
+
+      onPlaceholderComplete?.();
+
       let index = 0;
       const temp: Record<number, number> = {};
       let finalText = '';
@@ -114,16 +125,16 @@ export const FUTIDynamicText: React.FC<IFUTIDynamicTextProps> = memo(
     }, [text]);
 
     return (
-      <motion.h1
+      <Element
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 0.016 } }}
         onAnimationStart={handleAnimation}
         className={cn('inline-block font-bold leading-tight', className)}
-        style={style}
+        style={style ?? {}}
         {...rest}
       >
         {visibleText}
-      </motion.h1>
+      </Element>
     );
   },
 );
