@@ -3,11 +3,13 @@ import React from 'react';
 import { FUTILogo } from '@/app/components/main-layout/footer/logo';
 import { Separator } from '@/app/components/ui/separator';
 import { FTooltip } from '@/app/components/ui/tooltip';
+import { BasicsProps } from '@/app/components/ui/types';
+import { cn } from '@/utils';
 
-type IFooterProps = React.ComponentPropsWithoutRef<'footer'>;
+type IFooterProps = BasicsProps<'footer'>;
 
-export const Footer: React.FC<IFooterProps> = () => (
-  <footer className="flex h-16 items-center gap-4 pl-6">
+export const Footer: React.FC<IFooterProps> = ({ className, style }) => (
+  <footer className={cn('flex h-16 items-center gap-4 pl-6', className)} style={style}>
     <FUTILogo />
     <Separator orientation="vertical" className="h-8 bg-white/20" />
     <div>

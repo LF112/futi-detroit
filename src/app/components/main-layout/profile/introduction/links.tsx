@@ -3,12 +3,13 @@ import React from 'react';
 import { SiBilibili, SiGithub, SiGmail, SiSteamdeck } from '@icons-pack/react-simple-icons';
 
 import { buttonVariants } from '@/app/components/ui/button';
+import { BasicsProps } from '@/app/components/ui/types';
 import { cn } from '@/utils';
 
-type ILinksProps = React.ComponentPropsWithoutRef<'div'>;
+type ILinksProps = BasicsProps;
 
-export const Links: React.FC<ILinksProps> = () => (
-  <div className="flex gap-2">
+export const Links: React.FC<ILinksProps> = ({ className, style }) => (
+  <div className={cn('flex gap-2', className)} style={style}>
     <a
       href="https://github.com/LF112"
       target="_blank"

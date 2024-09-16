@@ -9,11 +9,12 @@ import {
   TextDeveloperEvent,
 } from '@/app/components/main-layout/profile/introduction/description/text-developer';
 import { FUTIDynamicText } from '@/app/components/ui/dynamic-text';
+import { BasicsProps } from '@/app/components/ui/types';
 import { cn } from '@/utils';
 
-type IDescriptionProps = React.ComponentPropsWithoutRef<'div'>;
+type IDescriptionProps = BasicsProps;
 
-export const Description: React.FC<IDescriptionProps> = () => {
+export const Description: React.FC<IDescriptionProps> = ({ className, style }) => {
   const [inAnimation, setInAnimation] = useState<boolean>(true);
 
   const typingEvent$ = useEventEmitter<TextDeveloperEvent>();
@@ -23,7 +24,9 @@ export const Description: React.FC<IDescriptionProps> = () => {
       className={cn(
         'flex h-7 min-w-[313.58px] gap-1 after:-ml-2 [&>h2]:text-lg [&>h2]:text-white/80',
         inAnimation && 'futi-cursor',
+        className,
       )}
+      style={style}
     >
       <FUTIDynamicText
         className="font-ubuntu"

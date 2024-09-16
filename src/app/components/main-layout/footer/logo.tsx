@@ -2,9 +2,10 @@ import React from 'react';
 
 import { FutiIcon } from '@/app/assets/svg/futi';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/app/components/ui/tooltip';
+import { BasicsProps } from '@/app/components/ui/types';
 import { cn } from '@/utils';
 
-type IFUTILogoProps = React.ComponentPropsWithoutRef<'a'>;
+type IFUTILogoProps = BasicsProps<'a'>;
 
 export const FUTILogo: React.FC<IFUTILogoProps> = ({ className, ...rest }) => (
   <Tooltip>
