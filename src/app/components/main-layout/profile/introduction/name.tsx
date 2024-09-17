@@ -8,7 +8,7 @@ type INameProps = BasicsProps;
 
 export const Name: React.FC<INameProps> = ({ className, style }) => (
   <div className={cn('flex h-12 flex-col justify-center gap-2', className)} style={style}>
-    <h1 className="my-0 px-4 font-kanit font-light text-white/90">
+    <h1 className="my-0 px-4 font-kanit text-3xl font-light text-white/90">
       Hi, I&apos;m <span className="font- font-normal text-white/90">LF112</span>
     </h1>
     <Separator className="h-[3px] w-full rounded bg-profile-line shadow" />
