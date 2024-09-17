@@ -19,7 +19,7 @@ export const Links: React.FC<ILinksProps> = ({ className, style }) => (
       )}
       rel="noreferrer"
     >
-      <SiGithub className="mr-2 h-4 w-4 stroke-[#ecf6ff]/85" />
+      <SiGithub className="mr-2 h-4 w-4 fill-[#ecf6ff] stroke-[#ecf6ff]/85" />
       Github
     </a>
     <a
@@ -31,7 +31,7 @@ export const Links: React.FC<ILinksProps> = ({ className, style }) => (
       )}
       rel="noreferrer"
     >
-      <SiBilibili className="mr-2 h-4 w-4 stroke-[#ecf6ff]/85" />
+      <SiBilibili className="mr-2 h-4 w-4 fill-[#ecf6ff] stroke-[#ecf6ff]/85" />
       BiliBili
     </a>
     <a
@@ -43,7 +43,7 @@ export const Links: React.FC<ILinksProps> = ({ className, style }) => (
       )}
       rel="noreferrer"
     >
-      <SiSteamdeck className="mr-2 h-4 w-4 stroke-[#ecf6ff]/85" />
+      <SiSteamdeck className="mr-2 h-4 w-4 fill-[#ecf6ff] stroke-[#ecf6ff]/85" />
       Steam
     </a>
     <a
@@ -55,7 +55,7 @@ export const Links: React.FC<ILinksProps> = ({ className, style }) => (
       )}
       rel="noreferrer"
     >
-      <SiGmail className="mr-2 h-4 w-4 stroke-[#ecf6ff]/85" />
+      <SiGmail className="mr-2 h-4 w-4 fill-[#ecf6ff] stroke-[#ecf6ff]/85" />
       E-Mail
     </a>
   </div>

@@ -23,7 +23,15 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['**/dist', '**/node_modules', 'src/routeTree.gen.ts', '**/vite.config.ts', '**/tailwind.config.ts'],
+    ignores: [
+      '**/dist',
+      '**/node_modules',
+      'src/routeTree.gen.ts',
+      '**/vite.config.ts',
+      '**/tailwind.config.ts',
+      '**/public',
+      '**/.next',
+    ],
   },
   ...fixupConfigRules(
     compat.extends(
