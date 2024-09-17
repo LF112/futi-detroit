@@ -3,13 +3,14 @@ import React from 'react';
 import { DOMMotionComponents, motion, MotionProps } from 'framer-motion';
 
 import { AsComp, BasicsProps } from '@/app/components/ui/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 type ILoadingProps = BasicsProps &
   MotionProps & {
     insideClassName?: string;
     as?: AsComp;
   };
+
 export const Loading: React.FC<ILoadingProps> = ({
   className,
   insideClassName,

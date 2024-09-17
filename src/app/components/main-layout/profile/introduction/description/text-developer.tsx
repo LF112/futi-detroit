@@ -7,7 +7,7 @@ import { EventEmitter } from 'ahooks/lib/useEventEmitter';
 
 import { Highlighter } from '@/app/components/ui/highlighter';
 import { BasicsProps } from '@/app/components/ui/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 export enum TextDeveloperEvent {
   START = 'start',

@@ -10,7 +10,7 @@ import {
 } from '@/app/components/main-layout/profile/introduction/description/text-developer';
 import { FUTIDynamicText } from '@/app/components/ui/dynamic-text';
 import { BasicsProps } from '@/app/components/ui/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 type IDescriptionProps = BasicsProps;
 

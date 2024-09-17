@@ -4,7 +4,7 @@ import { SiBilibili, SiGithub, SiGmail, SiSteamdeck } from '@icons-pack/react-si
 
 import { buttonVariants } from '@/app/components/ui/button';
 import { BasicsProps } from '@/app/components/ui/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 type ILinksProps = BasicsProps;
 

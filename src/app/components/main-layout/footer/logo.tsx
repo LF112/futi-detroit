@@ -3,7 +3,7 @@ import React from 'react';
 import { FutiIcon } from '@/app/assets/svg/futi';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/app/components/ui/tooltip';
 import { BasicsProps } from '@/app/components/ui/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 type IFUTILogoProps = BasicsProps<'a'>;
 

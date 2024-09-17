@@ -10,12 +10,12 @@ import { Live2DModel } from 'pixi-live2d-display/cubism4';
 import { Live2DEvent } from '@/app/components/ui/live2d/index';
 import { BasicsProps } from '@/app/components/ui/types';
 
+Live2DModel.registerTicker(Ticker);
+
 type ILive2DCoreProps = BasicsProps<'canvas'> &
   MotionProps & {
     event$?: EventEmitter<Live2DEvent>;
   };
-
-Live2DModel.registerTicker(Ticker);
 
 export const Live2DCore: React.FC<ILive2DCoreProps> = ({ event$, ...rest }) => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);

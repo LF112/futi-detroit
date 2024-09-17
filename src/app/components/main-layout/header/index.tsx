@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 import { HeaderRibbon } from '@/app/components/main-layout/header/ribbon';
 import { FUTIDynamicText } from '@/app/components/ui/dynamic-text';
 import { BasicsProps } from '@/app/components/ui/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 type IHeaderProps = BasicsProps<'header'>;
 

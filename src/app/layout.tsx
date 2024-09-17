@@ -10,9 +10,9 @@ import { Footer } from '@/app/components/main-layout/footer';
 import { Header } from '@/app/components/main-layout/header';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
 import { TooltipProvider } from '@/app/components/ui/tooltip';
+import { cn } from '@/lib/utils';
 import { GeometosFont, interFont, kanitFont, MonaspaceNeonFont, russoOneFont, UbuntuFont } from '@/styles/font';
 import { TRPCReactProvider } from '@/trpc/react';
-import { cn } from '@/utils';
 
 export const metadata = {
   title: 'LF112「@futiwolf」',

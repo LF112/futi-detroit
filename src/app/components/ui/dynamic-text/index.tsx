@@ -18,7 +18,7 @@ import {
   wait,
 } from '@/app/components/ui/dynamic-text/utils';
 import { AsComp, BasicsProps } from '@/app/components/ui/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 type IFUTIDynamicTextProps = BasicsProps<'h1', 'children'> &
   Omit<MotionProps, 'onAnimationComplete'> & {

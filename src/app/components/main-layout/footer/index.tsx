@@ -4,7 +4,7 @@ import { FUTILogo } from '@/app/components/main-layout/footer/logo';
 import { Separator } from '@/app/components/ui/separator';
 import { FTooltip } from '@/app/components/ui/tooltip';
 import { BasicsProps } from '@/app/components/ui/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 type IFooterProps = BasicsProps<'footer'>;
 

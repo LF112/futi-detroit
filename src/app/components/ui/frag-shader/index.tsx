@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { vertex_shader } from '@/app/components/ui/frag-shader/consts';
 import { compileShader } from '@/app/components/ui/frag-shader/utils';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 type UniformValue = number | number[] | number[][] | Float32Array;
 export type Uniforms = Record<

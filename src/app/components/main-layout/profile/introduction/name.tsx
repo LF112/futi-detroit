@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Separator } from '@/app/components/ui/separator';
 import { BasicsProps } from '@/app/components/ui/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 type INameProps = BasicsProps;
 
