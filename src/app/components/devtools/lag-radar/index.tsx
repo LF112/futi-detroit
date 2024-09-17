@@ -6,7 +6,7 @@ import * as HoverCard from '@radix-ui/react-hover-card';
 
 import type { ILagRadarConfig } from '@/app/components/devtools/lag-radar/utils';
 import { lagRadar } from '@/app/components/devtools/lag-radar/utils';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 export interface ILagRadarProps
   extends React.ComponentPropsWithoutRef<typeof HoverCard.Root>,

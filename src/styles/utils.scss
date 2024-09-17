@@ -1,0 +1,20 @@
+.text-adjust {
+  -webkit-text-size-adjust: none;
+}
+
+.text-xxs {
+  font-size: 0.625rem;
+  @apply text-adjust leading-none;
+}
+
+.futi-text-lyrics {
+  text-shadow: rgba(6, 7, 25, 0.32) 0.05em 0.05em 0;
+}
+
+.futi-center {
+  @apply flex items-center justify-center;
+}
+
+.futi-cursor::after {
+  @apply block h-full w-[1.67px] animate-cursor-line border-[#528bff] bg-[#528bff] content-[''];
+}

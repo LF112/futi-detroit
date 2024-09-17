@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import 'shadcn';
+@import 'utils';
 
 @layer base {
   .futi-ui * {
@@ -16,23 +17,14 @@
 
 body {
   background-blend-mode: overlay, normal;
-  @apply overflow-clip bg-[#eff4f9] dark:bg-darkBackground;
-}
-
-.text-adjust {
-  -webkit-text-size-adjust: none;
-}
-
-.text-xxs {
-  font-size: 0.625rem;
-  @apply text-adjust leading-none;
+  @apply overflow-clip bg-darkBackground; // bg-[#eff4f9]
 }
 
 ::selection {
-  background-color: theme('colors.futi/0.15');
-  @media (prefers-color-scheme: dark) {
-    background-color: theme('colors.futi/0.25');
-  }
+  //background-color: theme('colors.futi/0.15');
+  //@media (prefers-color-scheme: dark) {
+  background-color: theme('colors.futi/0.25');
+  //}
 }
 
 ::-webkit-scrollbar,

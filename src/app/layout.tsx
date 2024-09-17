@@ -6,10 +6,13 @@ import '@/styles/index.scss';
 
 import { CommitPage } from '@/app/components/devtools/commit';
 import { LagRadar } from '@/app/components/devtools/lag-radar/dev';
+import { Footer } from '@/app/components/main-layout/footer';
+import { Header } from '@/app/components/main-layout/header';
 import { ScrollArea } from '@/app/components/ui/scroll-area';
-import { interFont } from '@/styles/font';
+import { TooltipProvider } from '@/app/components/ui/tooltip';
+import { cn } from '@/lib/utils';
+import { GeometosFont, interFont, kanitFont, MonaspaceNeonFont, russoOneFont, UbuntuFont } from '@/styles/font';
 import { TRPCReactProvider } from '@/trpc/react';
-import { cn } from '@/utils';
 
 export const metadata = {
   title: 'LF112「@futiwolf」',
@@ -23,13 +26,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <CommitPage />
       </head>
-      <body className={cn('futi-ui', interFont.variable)}>
-        <ScrollArea className="relative h-dvh w-dvw min-w-max">
-          <main className="flex">
-            <TRPCReactProvider>{children}</TRPCReactProvider>
-          </main>
-        </ScrollArea>
-        <LagRadar />
+      <body
+        className={cn(
+          'futi-ui',
+          interFont.variable,
+          GeometosFont.variable,
+          russoOneFont.variable,
+          kanitFont.variable,
+          UbuntuFont.variable,
+          MonaspaceNeonFont.variable,
+        )}
+      >
+        <TooltipProvider delayDuration={100}>
+          <ScrollArea className="relative h-dvh w-dvw min-w-max [&>[data-radix-scroll-area-viewport]>div]:!flex [&>[data-radix-scroll-area-viewport]>div]:h-full [&>[data-radix-scroll-area-viewport]>div]:flex-col">
+            <Header />
+            <main className="flex flex-1 flex-col">
+              <TRPCReactProvider>{children}</TRPCReactProvider>
+            </main>
+            <Footer />
+          </ScrollArea>
+          <LagRadar />
+        </TooltipProvider>
       </body>
     </html>
   );
