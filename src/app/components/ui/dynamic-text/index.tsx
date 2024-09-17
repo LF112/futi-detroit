@@ -128,7 +128,7 @@ export const FUTIDynamicText: React.FC<IFUTIDynamicTextProps> = memo(
       <Element
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 0.016 } }}
-        onAnimationStart={handleAnimation}
+        onAnimationStart={visibleText === text ? void 0 : handleAnimation}
         className={cn('inline-block font-bold leading-tight', className)}
         style={style ?? {}}
         {...rest}

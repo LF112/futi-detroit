@@ -34,11 +34,18 @@ export default function Home() {
     }
   }, []);
 
+  const [nameVisible, setNameVisible] = useState(false);
+
   return (
     <>
       <DetroitBackground />
       <div className="flex h-full w-full flex-col items-center justify-center gap-4 text-center">
-        <ProfileWrapper className="relative size-64">
+        <ProfileWrapper
+          className="futi-center relative overflow-hidden"
+          initial={{ opacity: 0, width: 0, height: 0 }}
+          animate={{ opacity: 1, width: 256, height: 256 }}
+          transition={{ duration: 0.2 }}
+        >
           <AnimatePresence>
             {profileImageVisible && (
               <motion.div
@@ -55,8 +62,13 @@ export default function Home() {
           </AnimatePresence>
           {live2dVisible && <Live2D event$={live2dEvent$} />}
         </ProfileWrapper>
-        <Name />
-        <Description />
+        <Name
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
+          transition={{ duration: 0.2 }}
+          onAnimationComplete={() => setNameVisible(true)}
+        />
+        <div className="h-7">{nameVisible && <Description />}</div>
         <Links />
       </div>
     </>
