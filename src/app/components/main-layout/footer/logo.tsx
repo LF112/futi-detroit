@@ -11,6 +11,7 @@ export const FUTILogo: React.FC<IFUTILogoProps> = ({ className, ...rest }) => (
   <Tooltip>
     <TooltipTrigger asChild>
       <a
+        href="https://www.futiwolf.com"
         className={cn(
           'futi-center relative cursor-pointer select-none font-russoOne text-xs text-[#737373] text-opacity-15',
           className,

@@ -18,13 +18,17 @@ export const Footer: React.FC<IFooterProps> = ({ className, style }) => (
         <p>
           Copyright &copy; 2017 - {new Date().getFullYear()}
           <FTooltip text="🙃 Independent Websites Developer" sideOffset={16}>
-            <a className="mx-1">LF112</a>
+            <a className="mx-1" href="https://www.lf112.net">
+              LF112
+            </a>
           </FTooltip>
           All rights reserved.
         </p>
         <p className="max-sm:hidden">/</p>
         <FTooltip text="AGPL-3.0" sideOffset={16}>
-          <a>Github Open Source</a>
+          <a href="https://github.com/LF112/futi-detroit" target="_blank" rel="noreferrer">
+            Github Open Source
+          </a>
         </FTooltip>
       </div>
     </div>
