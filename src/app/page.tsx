@@ -7,6 +7,7 @@ import { useEventEmitter } from 'ahooks';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import profileImage from '@/app/assets/webp/futiwolf.webp';
+import { DetroitBackground } from '@/app/components/main-layout/background/detroit';
 import { Description } from '@/app/components/main-layout/profile/introduction/description';
 import { Links } from '@/app/components/main-layout/profile/introduction/links';
 import { Name } from '@/app/components/main-layout/profile/introduction/name';
@@ -34,27 +35,30 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-4 text-center">
-      <ProfileWrapper className="relative size-64">
-        <AnimatePresence>
-          {profileImageVisible && (
-            <motion.div
-              key="futi-profile-image"
-              className="absolute left-0 top-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Image src={profileImage} alt="futiwolf,LF112" className="size-64" priority />
-            </motion.div>
-          )}
-        </AnimatePresence>
-        {live2dVisible && <Live2D event$={live2dEvent$} />}
-      </ProfileWrapper>
-      <Name />
-      <Description />
-      <Links />
-    </div>
+    <>
+      <DetroitBackground />
+      <div className="flex h-full w-full flex-col items-center justify-center gap-4 text-center">
+        <ProfileWrapper className="relative size-64">
+          <AnimatePresence>
+            {profileImageVisible && (
+              <motion.div
+                key="futi-profile-image"
+                className="absolute left-0 top-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Image src={profileImage} alt="futiwolf,LF112" className="size-64" priority />
+              </motion.div>
+            )}
+          </AnimatePresence>
+          {live2dVisible && <Live2D event$={live2dEvent$} />}
+        </ProfileWrapper>
+        <Name />
+        <Description />
+        <Links />
+      </div>
+    </>
   );
 }
