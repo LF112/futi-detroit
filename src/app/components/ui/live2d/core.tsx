@@ -30,7 +30,7 @@ export const Live2DCore: React.FC<ILive2DCoreProps> = ({ event$, ...rest }) => {
         antialias: true,
       });
 
-      const model = await Live2DModel.from('/live2d/futi.model3.json', { autoInteract: false });
+      const model = await Live2DModel.from('/live2d/futiwolf/futi.model3.json', { autoInteract: false });
 
       model.scale.set(0.125);
 

@@ -2,7 +2,7 @@
 	"Version": 3,
 	"FileReferences": {
 		"Moc": "futi.moc3",
-		"Textures": ["futi.2048/texture_00.png"],
+		"Textures": ["futi.2048/texture_00.webp"],
 		"Physics": "futi.physics3.json",
 		"DisplayInfo": "futi.cdi3.json",
 		"Motions": {
