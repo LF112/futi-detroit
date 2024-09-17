@@ -19,8 +19,10 @@ export default {
       backgroundImage: {
         darkBackground:
           'radial-gradient(23rem 23rem at 70% 30%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)), linear-gradient(rgb(34, 37, 43) 20rem, rgb(21, 22, 26) 62rem)',
-        'footer-line': 'linear-gradient(90deg, rgba(119, 119, 119, 0.2), rgba(72, 72, 72, 0.2), rgba(103, 103, 103, 0.2), rgba(60, 60, 60, 0.2))',
-        'profile-line': 'linear-gradient(to right, rgb(55, 239, 249), rgb(0, 145, 228), rgb(100, 198, 244), rgb(100, 192, 236))'
+        'footer-line':
+          'linear-gradient(90deg, rgba(119, 119, 119, 0.2), rgba(72, 72, 72, 0.2), rgba(103, 103, 103, 0.2), rgba(60, 60, 60, 0.2))',
+        'profile-line':
+          'linear-gradient(to right, rgb(55, 239, 249), rgb(0, 145, 228), rgb(100, 198, 244), rgb(100, 192, 236))',
       },
       colors: {
         futi: 'rgb(62 141 224 / <alpha-value>)',

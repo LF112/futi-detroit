@@ -16,5 +16,5 @@
 }
 
 .futi-cursor::after {
-  @apply h-full w-[1.67px] content-[''] bg-[#528bff] border-[#528bff] block animate-cursor-line
+  @apply block h-full w-[1.67px] animate-cursor-line border-[#528bff] bg-[#528bff] content-[''];
 }
